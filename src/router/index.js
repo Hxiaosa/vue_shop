@@ -4,6 +4,9 @@ import Login from '../components/login'
 import Home from '../components/home'
 import Welcome from '../components/welcome'
 import Users from '../components/user/users'
+import Rights from '../components/power/rights'
+import Roles from '../components/power/roles'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +23,13 @@ const router = new VueRouter({
       redirect:'/welcome',
       children: [
         {path:'/welcome', component:Welcome},
-        {path:'/users',component:Users}]}
+        {path:'/users',component:Users},
+        //rights是后台已经写好的路径 后台读取数据时就读进去了 
+        // 现在是规定这个路径跳转到哪个页面组件
+        {path:'/rights',component:Rights},
+        {path:'/roles',component:Roles}
+
+      ]}
 
   ]
 })
