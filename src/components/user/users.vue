@@ -136,6 +136,7 @@
           <el-button type="primary" @click="addUsers">确 定</el-button>
         </span>
       </el-dialog>
+      
       <!-- 修改用户对话框 -->
       <el-dialog
         title="修改用户"
@@ -356,6 +357,8 @@ export default {
       // 点击编辑按钮每次都重新渲染
       this.$refs.editFormRef.resetFields()
     },
+
+    //点击确实时将修改的数据传给服务器
     editUserInfo() {
       this.$refs.editFormRef.validate(async (value) => {
         if (!value) return
@@ -369,7 +372,7 @@ export default {
           }
         )
 
-        if (res.状态value值meta.status !== 200) {
+        if (res.meta.status !== 200) {
           return this.$message.error('用户信息修改失败')
         }
         //关闭对话框
