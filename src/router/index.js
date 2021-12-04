@@ -6,6 +6,7 @@ import Welcome from '../components/welcome'
 import Users from '../components/user/users'
 import Rights from '../components/power/rights'
 import Roles from '../components/power/roles'
+import Cate from '../components/goods/cate'
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,8 @@ const router = new VueRouter({
         //rights是后台已经写好的路径 后台读取数据时就读进去了 
         // 现在是规定这个路径跳转到哪个页面组件
         {path:'/rights',component:Rights},
-        {path:'/roles',component:Roles}
+        {path:'/roles',component:Roles},
+        {path:'/categories',component:Cate}
 
       ]}
 
