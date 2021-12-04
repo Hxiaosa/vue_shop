@@ -82,7 +82,6 @@
               type="primary"
               icon="el-icon-edit"
               @click="editRolesDialogInfo(scope.row.id)"
-              @close="editDialogClosed"
               >编辑</el-button
             >
             <!-- 删除角色按钮 -->
@@ -134,8 +133,13 @@
       </span>
     </el-dialog>
 
-    <!-- //编辑用户时打开的按钮 -->
-    <el-dialog title="编辑用户" :visible.sync="editDialogVisible" width="50%">
+    <!-- //编辑用户时打开的对话框 -->
+    <el-dialog
+      title="编辑用户"
+      :visible.sync="editDialogVisible"
+      width="50%"
+      @close="editDialogClosed"
+    >
       <el-form
         ref="editRolesForm"
         :model="editRolesForm"
@@ -345,10 +349,12 @@ export default {
       //刷新列表之后需要隐藏对话框
       this.setRightDialogVisible = false
     },
-    // 控制页面关闭时清除历史输入 注意用引用
+
+    // 控制添加角色页面关闭时清除历史输入 注意用引用
     addRolesDialogClosed() {
       this.$refs.addRolesFormRef.resetFields()
     },
+
     //添加角色 控制表单信息的输入，在点击确定按钮时将数据传给后台
     addRoles() {
       console.log('添加角色成功')
