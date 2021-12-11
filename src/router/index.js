@@ -7,6 +7,7 @@ import Users from '../components/user/users'
 import Rights from '../components/power/rights'
 import Roles from '../components/power/roles'
 import Cate from '../components/goods/cate'
+import Params from '../components/goods/params'
 
 Vue.use(VueRouter)
 
@@ -29,9 +30,10 @@ const router = new VueRouter({
         // 现在是规定这个路径跳转到哪个页面组件
         {path:'/rights',component:Rights},
         {path:'/roles',component:Roles},
-        {path:'/categories',component:Cate}
+        // {path:'/categories',component:Cate},
+        {path:'/params',component:Params}]
 
-      ]}
+      }
 
   ]
 })
